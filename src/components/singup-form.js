@@ -1,6 +1,7 @@
 import React from "react";
 import UserPool from "../UserPool";
 import {useNavigate} from "react-router-dom";
+import '../styles/login-form-style.css';
 
 const SingupForm = () => {
     const [email, setEmail] = React.useState("");
@@ -25,14 +26,14 @@ const SingupForm = () => {
 
 
   return (
-    <div className="singup-form">
-      <h1>Singup Form</h1>
-      <form onSubmit={onSubmit}>
+    <div className="container">
+      <div className="brand-title">Sing Up Form</div>
+      <form className="inputs" onSubmit={onSubmit}>
         <label htmlFor="email">E-mail</label>
-        <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" id="email" />
+        <input value={email} placeholder="widerman@gmail.com" onChange={(e) => setEmail(e.target.value)} type="email" id="email" />
         <label htmlFor="password">Password</label>
         <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" id="password" />
-        <button type="submit">Singup</button>
+        <button type="submit">Sing Up</button>
       </form>
       <h2>{Error}</h2>
     </div>
